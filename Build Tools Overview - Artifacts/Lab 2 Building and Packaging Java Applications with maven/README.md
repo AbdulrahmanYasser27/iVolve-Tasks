@@ -96,7 +96,7 @@ Hello iVolve Trainee
 
 ### Results
 
-![Results](Results.png)
+![Results](Resualts.png)
 
 ---
 
