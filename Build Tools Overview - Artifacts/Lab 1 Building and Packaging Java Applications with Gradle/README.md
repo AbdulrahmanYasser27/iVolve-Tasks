@@ -1,49 +1,124 @@
 # Lab 1: Building and Packaging Java Applications with Gradle
 
-This lab demonstrates how to build, test, and package a Java application using Gradle.
+## Objective
+
+Install Gradle, clone a Java application from GitHub, run unit tests, build the application into a JAR artifact, and verify it runs correctly.
+
+---
 
 ## Prerequisites
-- Java Development Kit (JDK) installed (version 8 or higher recommended).
-- Gradle installed and added to your system PATH.
-- Git installed.
+
+- Ubuntu / Debian-based Linux system
+- Java JDK installed
+- Internet connection
+
+---
 
 ## Steps
 
-1. Install Gradle  
-   Follow the official installation guide: https://gradle.org/install  
-   Verify installation:  
-   gradle -v
+### 1. Install Gradle
 
-   ![Gradle Installation and Setup](attachments/n9MfzbJPQ8nqPcpDvMTrn.png)
+Download and install Gradle 8.5 manually:
 
-2. Clone the Source Code  
-   git clone https://github.com/Ibrahim-Adel15/build1.git  
-   cd build1
+```bash
+wget https://services.gradle.org/distributions/gradle-8.5-bin.zip -P /tmp
+sudo unzip -d /opt/gradle /tmp/gradle-8.5-bin.zip
+export PATH=/opt/gradle/gradle-8.5/bin:$PATH
+echo 'export PATH=/opt/gradle/gradle-8.5/bin:$PATH' >> ~/.bashrc
+```
 
-3. Run Unit Tests  
-   gradle test
+Verify the installation:
 
-4. Build the Application  
-   gradle build  
-   The artifact will be located at: build/libs/ivolve-app.jar
+```bash
+gradle --version
+```
 
-5. Run the Application  
-   java -jar build/libs/ivolve-app.jar
+---
 
-   ![Gradle Build and Run Output](attachments/FbxmBkqDiXGMYvE8682rF.png)
+### 2. Clone the Source Code
 
-6. Verify the Application  
-   Check the console output or application behavior to confirm it is working as expected.
+```bash
+git clone https://github.com/Ibrahim-Adel15/build1.git
+cd build1
+```
 
-## Expected Outcome
-- Gradle successfully installed and verified.
-- Repository cloned locally.
-- Unit tests executed with no failures.
-- JAR file generated in build/libs/.
-- Application runs correctly when executed with java -jar.
+---
+
+### 3. Run Unit Tests
+
+```bash
+gradle test
+```
+
+Expected output:
+
+```
+BUILD SUCCESSFUL in 4s
+3 actionable tasks: 3 executed
+```
+
+---
+
+### 4. Build the Application
+
+```bash
+gradle build
+```
+
+Expected output:
+
+```
+BUILD SUCCESSFUL in 2s
+7 actionable tasks: 4 executed, 3 up-to-date
+```
+
+This generates the artifact at:
+
+```
+build/libs/ivolve-app.jar
+```
+
+---
+
+### 5. Run the Application
+
+```bash
+java -jar build/libs/ivolve-app.jar
+```
+
+Expected output:
+
+```
+Hello iVolve Trainee
+```
+
+---
+
+## Screenshots
+
+### Commands Used
+
+![Commands](Commands.png)
+
+### Results
+
+![Results](Results.png)
+
+---
+
+## Summary
+
+| Step | Command | Result |
+|------|---------|--------|
+| Install Gradle | `wget` + `unzip` + `export PATH` | Gradle 8.5 installed |
+| Clone repo | `git clone` | Source code downloaded |
+| Run tests | `gradle test` | BUILD SUCCESSFUL in 4s |
+| Build app | `gradle build` | JAR generated in build/libs/ |
+| Run app | `java -jar build/libs/ivolve-app.jar` | Hello iVolve Trainee |
+
+---
 
 ## Notes
-- If Gradle is not installed globally, you can use the Gradle Wrapper included in the project:  
-  ./gradlew build  
-  ./gradlew test
-- Ensure your JAVA_HOME environment variable is set correctly.
+
+- Gradle 8.5 shows deprecation warnings about features incompatible with Gradle 9.0. These warnings do not affect the build and can be ignored for this lab.
+- To make the PATH change permanent across sessions, the export line is appended to ~/.bashrc.
