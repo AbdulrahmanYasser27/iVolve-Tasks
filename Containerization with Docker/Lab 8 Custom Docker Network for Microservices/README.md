@@ -133,11 +133,11 @@ http://localhost:5002   # frontend2 (default network)
 
 ### Frontend 1 (Connected Network)
 
-![Front1](front1.png)
+![Front1](Front1.png)
 
 ### Frontend 2 (Default Network)
 
-![Front2](front2.png)
+![Front2](Front2.png)
 
 ---
 
