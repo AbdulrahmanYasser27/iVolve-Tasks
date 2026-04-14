@@ -1,26 +1,29 @@
-# 📦 Lab 2: Building and Packaging Java Applications with Maven
+# Lab 2: Building and Packaging Java Applications with Maven
 
-## 📖 Overview
+## Objective
 
-This project demonstrates how to build, test, and run a Java application using **Maven**. The goal is to understand the full lifecycle from cloning the repository to generating the final JAR file and verifying the application.
+Install Maven, clone a Java application from GitHub, run unit tests, build the application into a JAR artifact, and verify it runs correctly.
 
 ---
 
-## 🛠️ Prerequisites
+## Prerequisites
 
-Before starting, make sure you have the following installed:
+* Ubuntu / Debian-based Linux system
+* Java JDK installed
+* Internet connection
 
-* Java (JDK 8 or higher)
-* Maven
+---
 
-### 🔹 Install Maven (WSL / Linux)
+## Steps
+
+### 1. Install Maven
 
 ```bash
 sudo apt update
 sudo apt install maven -y
 ```
 
-### 🔹 Verify Installation
+Verify the installation:
 
 ```bash
 mvn -version
@@ -28,7 +31,7 @@ mvn -version
 
 ---
 
-## 📥 Clone the Repository
+### 2. Clone the Source Code
 
 ```bash
 git clone https://github.com/Ibrahim-Adel15/build2.git
@@ -37,86 +40,80 @@ cd build2
 
 ---
 
-## 🧪 Run Unit Tests
-
-Run the following command to execute unit tests:
+### 3. Run Unit Tests
 
 ```bash
 mvn test
 ```
 
-### 📸 Test Results
+Expected output:
 
-![Unit Test Output](Reusalts.png)
+```
+[INFO] BUILD SUCCESS
+```
 
 ---
 
-## 🏗️ Build the Application
-
-Build the project and generate the JAR file:
+### 4. Build the Application
 
 ```bash
 mvn package
 ```
 
-### 📦 Output Artifact
+Expected output:
 
-The generated file will be located at:
+```
+[INFO] BUILD SUCCESS
+```
+
+This generates the artifact at:
 
 ```
 target/hello-ivolve-1.0-SNAPSHOT.jar
 ```
 
-### 📸 Build Output
-
-![Build Output](Commands.png)
-
 ---
 
-## ▶️ Run the Application
-
-Execute the generated JAR file:
+### 5. Run the Application
 
 ```bash
 java -jar target/hello-ivolve-1.0-SNAPSHOT.jar
 ```
 
----
-
-## ✅ Verify Application
-
-* Ensure the application runs successfully without errors.
-* Check the console output for expected results.
-
----
-
-## 📂 Project Structure
+Expected output:
 
 ```
-build2/
-├── src/
-├── target/
-├── pom.xml
-└── README.md
+Hello iVolve Trainee
 ```
 
 ---
 
-## 🎯 Key Takeaways
+## Screenshots
 
-* Learned how to use Maven for project management
-* Executed unit tests using Maven lifecycle
-* Built and packaged a Java application into a JAR file
-* Successfully ran and verified the application
+### Commands Used
 
----
+![Commands](Commands.png)
 
-## 👨‍💻 Author
+### Results
 
-**Abdulrahman Yasser**
+![Results](Results.png)
 
 ---
 
-## ⭐ Support
+## Summary
 
-If you found this useful, feel free to star the repository ⭐
+| Step          | Command                                          | Result                       |
+| ------------- | ------------------------------------------------ | ---------------------------- |
+| Install Maven | `apt install maven`                              | Maven installed successfully |
+| Clone repo    | `git clone`                                      | Source code downloaded       |
+| Run tests     | `mvn test`                                       | BUILD SUCCESS                |
+| Build app     | `mvn package`                                    | JAR generated in target/     |
+| Run app       | `java -jar target/hello-ivolve-1.0-SNAPSHOT.jar` | Hello iVolve Trainee         |
+
+---
+
+## Notes
+
+* Maven follows a lifecycle-based build system (clean, compile, test, package).
+* The generated JAR file is located inside the `target/` directory.
+* Ensure Java is properly installed and configured before running Maven commands.
