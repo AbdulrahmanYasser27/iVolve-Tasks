@@ -140,7 +140,7 @@ kubectl apply -f test-pv.yaml
 
 ### Commands Used
 
-![Commands](Commands.png)
+![Commands](commands.png)
 
 ---
 
